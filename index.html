@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casino</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+
+    <div class="startGame">
+        <h1>Вы попали в казино <br> "У Кузи!!!"</h1>
+        <button onclick="startGame()">Начать игру!</button>
+    </div>
+    <div class="app">
+        <img class="pointer" src="/img/pointer.png" alt="">
+        <div class="scope">
+            <ul class="list">
+                <!-- <li class="list__item">
+                    <img src="img/case/cigs.png" alt="">
+                </li>
+                <li class="list__item">
+                    <img src="img/case/flash.png" alt="">
+                </li>
+                <li class="list__item">
+                    <img src="img/case/potato.png" alt="">
+                </li>
+                <li class="list__item">
+                    <img src="img/case/zip.png" alt="">
+                </li> -->
+            </ul>
+            
+        </div>
+
+        <button onclick="start()" class="start">Крутить</button>
+
+        <div id="selectedItemImage" style="display: none;">
+            <!-- <h1>rere</h1> -->
+        </div>
+        <!-- <div onclick="closePrice" class="overlay"></div> -->
+    </div>
+
+
+
+
+
+
+    <audio id="sound" src="/sounds/sound.mp3"></audio>
+    <script src="/main.js"></script>
+    <script src="/sound.js"></script>
+</body>
+</html>
