@@ -11,4 +11,13 @@ function startGame() {
     Go.addEventListener('click', function() {
         Go.style.display = 'none'
     });
+
+    kazikplay()
+}
+
+
+function kazikplay() {
+    let kazik = document.getElementById('kazik');
+
+    kazik.play();
 }

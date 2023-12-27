@@ -1,10 +1,14 @@
 const cells = 31;
 
 const items = [
+    {name: 'Трусы драные"', img: 'img/case/trusi.png', chance: 1},
     {name: 'Пакет с землей', img: 'img/case/zip.png', chance: 10,},
     {name: 'Пачку сиг', img: 'img/case/cigs.png', chance: 20},
-    {name: 'Баночку флешика', img: 'img/case/flash.png', chance: 40},
-    {name: 'Мешок картошки', img: 'img/case/potato.png', chance: 60}
+    {name: 'Баночку флешика', img: 'img/case/flash.png', chance: 30},
+    {name: 'Мешок картошки', img: 'img/case/potato.png', chance: 40},
+    {name: 'Камень "обыкновенный"', img: 'img/case/stone.png', chance: 50},
+    {name: 'Палка деревянная"', img: 'img/case/stick.png', chance: 60},
+    {name: 'Носки вонючки', img: 'img/case/noski.png', chance: 65}
     
 ];
 
@@ -85,11 +89,12 @@ function start () {
         isStarted = false;
         item.classList.add('active');
         
-           var data = JSON.parse(item.getAttribute('data-item'))
-           console.log(data)
-
-        displaySelectedItem(item);
+        var data = JSON.parse(item.getAttribute('data-item'))
+        console.log(data)
+    
+        displaySelectedItem(item, data.name); // Изменённый вызов
     });
+    
 
     // console.log(list.querySelectorAll('li').length);
 }; 
@@ -97,7 +102,7 @@ function start () {
 
 
 
-function displaySelectedItem(item) {
+function displaySelectedItem(item, itemName) {
 
     
     const imgSrc = item.querySelector('img').src; // Получаем src изображения выбранного элемента
@@ -110,10 +115,11 @@ function displaySelectedItem(item) {
     // displayArea.innerHTML = `<img src="${imgSrc}" alt="Selected Item"/>`; // Отображаем изображение
 
     displayArea.innerHTML = `
-  <h1>Поздравляю, вы выиграли ${name}</h1>
-  <img src="${imgSrc}" alt="Selected Item"/>
-  <button onclick="closePrice()">Крутить дальше!</button>
-`;
+    <h1>Поздравляю, вы выиграли ${itemName}</h1>
+    <img src="${imgSrc}" alt="Selected Item"/>
+    <button onclick="closePrice()">Крутить дальше!</button>
+  `;
+  
     
     displayArea.style.width = '500px';
     displayArea.style.height = '300px';
